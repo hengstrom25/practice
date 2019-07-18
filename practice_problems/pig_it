@@ -1,0 +1,16 @@
+def pig_it(text)
+  new_text = text.split(" ")
+  pig_text = new_text.map {|word| is_word?(word) ? pig_it_word(word) : word}
+  pig_text.join(" ")
+end
+
+def pig_it_word(word)
+  new_word = word[1..-1] + word[0]
+  new_word + "ay"
+end
+
+def is_word?(word)
+   if word[0] =~ /[A-Za-z]/
+     return true
+    end
+end
