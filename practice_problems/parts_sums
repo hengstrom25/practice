@@ -1,0 +1,49 @@
+def parts_sums(ls)
+  if ls.empty?
+    return [0]
+  else
+    sum = 0
+    ls.each {|num| sum+=num}
+    ls.shift
+    [sum] + parts_sums(ls)
+  end
+end
+
+
+def parts_sums(ls)
+  if ls.empty?
+    return [0]
+  else
+    first = ls.shift
+    remainder = parts_sums(ls)
+    sum = first + remainder[0]
+    return [sum] + remainder
+  end
+end
+
+
+def parts_sums(ls)
+  if ls.empty?
+    return [0]
+  else
+    sum = 0
+    ls.each {|num| sum+=num}
+    result = [sum]
+    ls.each {|num| 
+      sum -= num
+      result = result + [sum]
+    }
+    return result
+  end
+end
+
+
+def parts_sums(ls)
+  sum = 0
+  result = [0]
+  ls.reverse_each {|num| 
+    sum+=num
+    result.unshift(sum)
+  }
+  return result
+end
