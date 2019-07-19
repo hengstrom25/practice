@@ -1,0 +1,9 @@
+Finding integers that appear an odd number of times
+
+def find_it(seq)
+  seq.group_by{|i| i}.map {|x,y| 
+  if y.count.odd?
+    return x
+  end 
+  }
+end
