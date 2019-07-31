@@ -1,0 +1,6 @@
+function solution(S,K) {
+	const daysofweek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+	return daysofweek[(daysofweek.indexOf(S) + K) %7];
+};
+
+solution("Mon", 12)
