@@ -1,0 +1,19 @@
+def unique_in_order(iterable)
+  if iterable.is_a? Array
+    list = iterable
+  else
+    list = iterable.split("")
+  end
+  a = list[0]
+  results = []
+    if list.length == 0
+    else 
+      results.push(a)
+      list.each{|c|
+        if c != a
+          results.push(c)
+          a = c
+        end}
+    end
+  results
+end
