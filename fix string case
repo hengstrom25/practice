@@ -1,0 +1,11 @@
+def solve s
+  caps = s.scan(/[A-Z]/).length
+  lowers = s.scan(/[a-z]/).length
+  if caps > lowers
+    s.upcase
+  elsif caps < lowers
+    s.downcase
+  else 
+    s.downcase
+  end
+end
