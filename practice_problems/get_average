@@ -1,0 +1,7 @@
+def get_average(marks)
+  #raise NotImplementedError.new "TODO: get_average"
+  sum = 0
+  marks.each {|i|
+    sum += i}
+  sum/marks.length
+end
