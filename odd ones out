@@ -1,0 +1,11 @@
+def odd_ones_out(numbers)
+  counts = {}
+  numbers.each{|i|
+    if counts.include?(i)
+      counts[i] += 1
+    else
+      counts[i] = 1
+    end}
+   numbers.select{|value|
+     counts[value].even?}
+end
